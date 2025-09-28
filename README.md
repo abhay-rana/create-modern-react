@@ -24,11 +24,13 @@ npm run dev
 ## Usage
 
 ### Basic Usage
+
 ```bash
 npx create-modern-react my-project
 ```
 
 ### With Options
+
 ```bash
 npx create-modern-react my-project --skip-install --skip-git
 ```
@@ -52,15 +54,19 @@ The CLI will guide you through selecting:
 ## Template Combinations
 
 ### Minimal Setup
+
 - Vite + React + TypeScript + Tailwind CSS
 
 ### Enterprise Ready
+
 - Vite + React + TypeScript + Ant Design + Redux Toolkit + React Query + React Router
 
 ### Modern Stack
+
 - Vite + React + TypeScript + Tailwind + Zustand + React Query + Wouter
 
 ### Full Featured
+
 - All libraries with Storybook, testing, and PWA support
 
 ## CLI Options

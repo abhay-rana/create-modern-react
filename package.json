@@ -19,16 +19,16 @@
     "modern",
     "scaffold"
   ],
-  "author": "Your Name",
+  "author": "Abhay Rana",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/create-modern-react.git"
+    "url": "https://github.com/abhay-rana/create-modern-react.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/create-modern-react/issues"
+    "url": "https://github.com/abhay-rana/create-modern-react/issues"
   },
-  "homepage": "https://github.com/yourusername/create-modern-react#readme",
+  "homepage": "https://github.com/abhay-rana/create-modern-react#readme",
   "files": [
     "bin",
     "lib",
