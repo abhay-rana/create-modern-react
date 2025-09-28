@@ -1,6 +1,6 @@
 {
   "name": "create-modern-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create a modern React application with Vite, TypeScript, and your choice of modern libraries",
   "main": "bin/index.js",
   "bin": {
