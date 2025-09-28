@@ -1,0 +1,54 @@
+{
+  "name": "create-modern-react",
+  "version": "1.0.0",
+  "description": "Create a modern React application with Vite, TypeScript, and your choice of modern libraries",
+  "main": "bin/index.js",
+  "bin": {
+    "create-modern-react": "./bin/index.js"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "keywords": [
+    "react",
+    "vite",
+    "typescript",
+    "cli",
+    "boilerplate",
+    "template",
+    "modern",
+    "scaffold"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/create-modern-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/create-modern-react/issues"
+  },
+  "homepage": "https://github.com/yourusername/create-modern-react#readme",
+  "files": [
+    "bin",
+    "lib",
+    "templates"
+  ],
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^11.0.0",
+    "fs-extra": "^11.0.0",
+    "inquirer": "^8.2.6"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.0",
+    "@types/inquirer": "^9.0.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  }
+}
