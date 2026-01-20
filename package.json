@@ -11,15 +11,20 @@
   },
   "keywords": [
     "react",
-    "vite",
     "typescript",
+    "vite",
     "tailwindcss",
-    "shadcn",
     "cli",
-    "boilerplate",
-    "template",
-    "modern",
     "scaffold",
+    "boilerplate",
+    "create-react-app",
+    "starter-kit",
+    "shadcn-ui",
+    "react-starter",
+    "vite-template",
+    "react-boilerplate",
+    "npx",
+    "frontend",
     "antd",
     "redux"
   ],
@@ -27,7 +32,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/abhay-rana/create-modern-react.git"
+    "url": "git+https://github.com/abhay-rana/create-modern-react.git"
   },
   "bugs": {
     "url": "https://github.com/abhay-rana/create-modern-react/issues"
