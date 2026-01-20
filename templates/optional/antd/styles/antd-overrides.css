@@ -1,0 +1,104 @@
+/**
+ * Ant Design style overrides
+ * Use this file to customize Ant Design components with CSS
+ * Prefer using the theme config when possible
+ */
+
+/* Make Ant Design work better with Tailwind's reset */
+.ant-btn {
+  font-weight: 500;
+}
+
+/* Improve form spacing */
+.ant-form-item {
+  margin-bottom: 16px;
+}
+
+.ant-form-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Better table styling */
+.ant-table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ant-table-thead > tr > th {
+  font-weight: 600;
+}
+
+/* Card improvements */
+.ant-card {
+  border-radius: 8px;
+}
+
+.ant-card-head {
+  min-height: 48px;
+}
+
+/* Modal improvements */
+.ant-modal-content {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.ant-modal-header {
+  border-bottom: 1px solid var(--ant-color-border-secondary);
+}
+
+.ant-modal-footer {
+  border-top: 1px solid var(--ant-color-border-secondary);
+}
+
+/* Dropdown improvements */
+.ant-dropdown-menu {
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.ant-dropdown-menu-item {
+  border-radius: 4px;
+}
+
+/* Select improvements */
+.ant-select-dropdown {
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.ant-select-item {
+  border-radius: 4px;
+}
+
+/* Date picker improvements */
+.ant-picker-dropdown {
+  border-radius: 8px;
+}
+
+/* Message improvements */
+.ant-message .ant-message-notice-content {
+  border-radius: 8px;
+}
+
+/* Notification improvements */
+.ant-notification-notice {
+  border-radius: 8px;
+}
+
+/* Tag improvements */
+.ant-tag {
+  border-radius: 4px;
+}
+
+/* Skeleton improvements for dark mode */
+.dark .ant-skeleton-content .ant-skeleton-title,
+.dark .ant-skeleton-content .ant-skeleton-paragraph > li {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.06) 25%,
+    rgba(255, 255, 255, 0.12) 37%,
+    rgba(255, 255, 255, 0.06) 63%
+  );
+  background-size: 400% 100%;
+}

@@ -1,136 +1,230 @@
-# Vite TypeScript React Template - Features
+# create-modern-react
 
-A comprehensive, production-ready React template with modern development practices and industry-standard tooling for building scalable Single Page Applications (SPAs).
+> Production-ready React + TypeScript + Tailwind in seconds
 
-## 🚀 Core Framework & Build
+## What Native Vite Gives You
 
-- **React 18** - Latest React with concurrent features and improved performance
-- **TypeScript** - Full type safety with strict configuration
-- **Vite** - Lightning-fast build tool with HMR and optimized production builds
-- **SWC** - Super fast JavaScript/TypeScript compiler (faster than Babel)
-- **ESM** - Native ES modules support for better tree-shaking
+```
+npm create vite@latest my-app -- --template react-ts
+```
 
-## 🛣️ Routing & Navigation
+- React + TypeScript
+- Basic Vite config
+- Empty `src/` folder
+- **That's it.**
 
-- **Wouter** - Lightweight routing library (2KB) as React Router alternative
-- **Lazy Loading** - Code splitting with React.Suspense for optimal performance
-- **Private Routes** - Authentication-aware route protection
-- **404 Handling** - Custom 404 page for unmatched routes
+## What create-modern-react Gives You
 
-## 🗄️ State Management
+```
+npx create-modern-react my-app
+```
 
-- **Redux Toolkit** - Modern Redux with simplified syntax and best practices
-- **Redux Persist** - Automatic state persistence across sessions
-- **Typed Hooks** - Custom hooks (`useAppDispatch`, `useAppSelector`) for type safety
-- **Dev Tools** - Redux DevTools integration for debugging
+Everything below is ready to use immediately:
 
-## 🎨 UI & Styling
+### Build & Dev Tools
 
-- **Ant Design v5** - Enterprise-class UI components with theme customization
-- **Custom Component Library** - Reusable components with consistent design system
-- **Tailwind CSS** - Utility-first CSS framework with custom theme
-- **CSS Modules** - Scoped styling for component-specific styles
-- **Dark Mode** - Built-in theme switching support
-- **Class Variance Authority (CVA)** - Type-safe component variants
-- **Lucide React** - Beautiful, consistent icon library
+- **Vite 5.4 + SWC** - 20x faster than Babel
+- **TypeScript 5.5** - Strict mode enabled
+- **Path aliases** - `~/components` instead of `../../../`
+- **ESLint** - 25+ rules with unused-imports detection
+- **Prettier** - With Tailwind plugin for class sorting
+- **Console removal** - Automatic in production builds
+- **Gzip compression** - Pre-compressed `.gz` files for production (threshold: 1KB)
+- **Chunk splitting** - Vendor and router chunks for better caching
 
-## 🎯 Component Architecture
+### SVG as React Components
 
-- **Design System** - Consistent Button, Input, Tabs, Loader components
-- **Storybook Integration** - Component documentation and testing
-- **Error Boundary** - Graceful error handling and fallback UI
-- **Container Pattern** - App-level layout and error management
-- **Responsive Design** - Mobile-first approach with custom breakpoints
+Import SVGs directly as React components with full TypeScript support:
 
-## 🛠️ Development Tools
+```tsx
+// Method 1: Named export
+import { ReactComponent as Logo } from './logo.svg';
 
-- **ESLint** - Strict linting rules with unused imports detection
-- **Prettier** - Code formatting with Tailwind plugin
-- **Husky** - Git hooks for code quality enforcement
-- **lint-staged** - Pre-commit checks for staged files
-- **TypeScript Strict Mode** - Maximum type safety and error prevention
+// Method 2: Query param (recommended)
+import Logo from './logo.svg?react';
 
-## 🔧 Utilities & Hooks
+// Usage - SVGs scale with font-size and accept all SVG props
+<Logo className="h-8 w-8 text-primary" />
+```
+
+Features:
+- **SVGO optimization** - Removes unnecessary attributes
+- **Icon mode** - SVGs scale with `font-size` (1em)
+- **ViewBox preserved** - Proper scaling maintained
+- **Full TypeScript support** - Type declarations included
+
+### Styling
+
+- **Tailwind CSS 3.4** - Pre-configured with dark mode
+- **tailwind-merge** - No class conflicts
+- **clsx** - Conditional classes made easy
+- **CVA** - Type-safe component variants
+- **CSS Variables** - Theme customization ready
+
+### UI Components (Shadcn/ui)
+
+- `<Button />` - 6 variants (default, destructive, outline, secondary, ghost, link)
+- `<Input />` - Proper focus states and accessibility
+- `<Card />` - With Header, Content, Footer subcomponents
+- `<Skeleton />` - Loading states
+- `<Separator />` - Horizontal and vertical dividers
+
+### Routing
+
+- **Wouter** - 2KB lightweight (vs 28KB React Router)
+- **Lazy loading** - React.lazy() built-in
+- **Suspense fallback** - Loading skeleton
+- **404 page** - Included
+
+### API Layer
+
+- **Axios** - With request/response interceptors
+- **Auto auth token** - Adds Bearer token from localStorage
+- **Cancel token hook** - Prevent memory leaks
+- **Type-safe helpers** - `getApi<T>()`, `postApi<T>()`, `patchApi<T>()`, etc.
+
+### Toast Notifications
+
+- **Alertify service** - react-hot-toast wrapper
+- **Auto-dismiss** - Previous toast dismissed automatically
+- `Alertify.success()`, `Alertify.error()`, `Alertify.info()`, `Alertify.loading()`
 
 ### Custom Hooks
 
-- `useLoader` - Loading state management
-- `useDebounce` - Input debouncing for performance
-- `useCancelToken` - Request cancellation for API calls
-- `useTheme` - Theme switching and management
+- `useLoader()` - Loading state management (start/end)
+- `useDebounce()` - Value debouncing
+- `useCancelToken()` - Axios request cancellation
 
-### Utility Functions
+```tsx
+// useLoader example
+const [isLoading, startLoader, endLoader] = useLoader(false);
 
-- `cn()` - Conditional className composition with clsx + tailwind-merge
-- Regex patterns collection for common validations
-- Query parameter utilities
-- Type-safe utility functions
+const fetchData = async () => {
+  startLoader();
+  try {
+    await getApi('/users');
+  } finally {
+    endLoader();
+  }
+};
+```
 
-## 📡 API & Services
+### Error Handling
 
-- **Axios** - HTTP client with interceptors and error handling
-- **Centralized API Services** - Organized API call management
-- **Request Cancellation** - Prevent memory leaks with abort controllers
-- **Alertify Services** - Centralized toast/error messaging system
+- **ErrorBoundary** - With retry button
+- **Console logging** - In development
+- **Graceful fallback UI** - No blank screens
 
-## ⚡ Performance Optimizations
+### Performance Optimizations
 
-- **Console Removal** - Automatic console statement removal in production
-- **SVG as Components** - Import SVGs as React components with SVGR
-- **Bundle Optimization** - Tree-shaking and code splitting
-- **Network Access** - Development server with network exposure
+- **Gzip compression** - Files >1KB pre-compressed to `.gz`
+- **Chunk splitting** - `vendor.js` (React) + `router.js` (Wouter) for optimal caching
+- **Tree shaking** - Dead code elimination
+- **Console removal** - `console.log` stripped in production
+- **SVG optimization** - SVGO removes redundant attributes
 
-## 🛡️ Developer Experience
-
-- **Path Aliases** - Clean imports with `~/` prefix for src directory
-- **Type Definitions** - Comprehensive TypeScript interfaces
-- **Environment Configuration** - Vite environment variables support
-- **Git Integration** - Proper gitignore and branch management
-- **Package Manager** - Yarn v3 with modern workspace features
-
-## 📦 Build & Deployment
-
-### Scripts Available
-
-- `yarn dev` - Development server with auto-browser opening
-- `yarn build` - Production build with TypeScript checking
-- `yarn lint` - Code linting with zero warnings policy
-- `yarn format` - Code formatting with Prettier
-- `yarn storybook` - Component documentation server
-
-### Production Ready
-
-- Optimized build output
-- Environment-specific configurations
-- Preview mode for production testing
-- CI/CD friendly setup
-
-## 🏗️ Project Structure
+### Organized Structure
 
 ```
 src/
 ├── components/
-│   ├── library/          # Design system components
-│   └── container.js/     # App container & error boundary
-├── screens/              # Page components
-├── routes/               # Routing configuration
-├── redux/                # State management
-├── providers/            # Context providers
-├── hooks/                # Custom React hooks
-├── services/             # API services
-├── utils/                # Utility functions
-├── types/                # TypeScript definitions
-└── styles/               # Global styles
+│   ├── ui/             # Shadcn/ui components
+│   └── layout/         # RootLayout, ErrorBoundary
+├── hooks/              # Custom hooks
+├── lib/                # Utilities (cn)
+├── routes/             # Wouter router
+├── screens/            # Pages (Home, NotFound)
+├── services/           # API layer
+│   └── api/            # Axios + helpers
+├── providers/          # Context (Theme)
+└── types/              # TypeScript definitions
 ```
 
-## 🤝 Contributing
+## Optional Features
 
-This template is designed for open source collaboration with:
+Select during project creation:
 
-- Comprehensive documentation in `CLAUDE.md`
-- Consistent code style enforcement
-- Type safety throughout
-- Clear project structure
-- Best practices implementation
+- **Redux Toolkit + Redux Persist** - State management with session persistence
+- **Ant Design v5** - Enterprise UI library (replaces Shadcn/ui)
+- **Husky + lint-staged** - Git hooks for code quality
 
-Perfect for teams and individual developers who want a solid foundation for modern React applications with enterprise-grade tooling and practices.
+## Comparison
+
+```
+FEATURE                  NATIVE VITE    CREATE-MODERN-REACT
+─────────────────────────────────────────────────────────────
+Tailwind CSS             ❌             ✅ Pre-configured
+SVG as components        ❌             ✅ SVGR plugin
+Gzip compression         ❌             ✅ Pre-compressed
+Routing                  ❌             ✅ Wouter + lazy load
+API layer                ❌             ✅ Axios + interceptors
+UI components            ❌             ✅ Shadcn/ui (5)
+Icons                    ❌             ✅ Lucide React
+Toasts                   ❌             ✅ react-hot-toast
+Error boundary           ❌             ✅ Built-in
+ESLint                   Basic          ✅ 25+ rules
+Path aliases             ❌             ✅ ~/components
+Theme support            ❌             ✅ Light/dark mode
+Chunk splitting          ❌             ✅ Vendor + router
+Setup time               ~2 hours       ✅ 30 seconds
+```
+
+## Quick Start
+
+```bash
+# Create a new project
+npx create-modern-react my-app
+
+# Navigate to project
+cd my-app
+
+# Start development server
+yarn dev
+```
+
+## Available Scripts
+
+```bash
+yarn dev          # Start dev server (port 3000)
+yarn build        # Production build (with gzip)
+yarn preview      # Preview production build
+yarn lint         # Run ESLint
+yarn lint:fix     # Fix ESLint issues
+yarn format       # Format with Prettier
+yarn format:check # Check formatting
+```
+
+## Build Output
+
+After `yarn build`, your `dist/` folder contains:
+
+```
+dist/
+├── assets/
+│   ├── index-[hash].js       # Main bundle
+│   ├── index-[hash].js.gz    # Gzipped (served by nginx/Apache)
+│   ├── vendor-[hash].js      # React + ReactDOM
+│   ├── vendor-[hash].js.gz
+│   ├── router-[hash].js      # Wouter
+│   ├── router-[hash].js.gz
+│   ├── index-[hash].css
+│   └── index-[hash].css.gz
+└── index.html
+```
+
+Your server (nginx, Apache, Cloudflare) can serve `.gz` files directly for faster load times.
+
+## Taglines
+
+- "From `npx` to production-ready in 30 seconds"
+- "Stop configuring. Start building."
+- "The React starter you wish existed"
+- "Batteries included React"
+
+---
+
+**Version:** 2.0.0
+
+**Core Stack:** React 18.3 + TypeScript 5.5 + Vite 5.4 (SWC) + Tailwind CSS 3.4
+
+**License:** MIT

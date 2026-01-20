@@ -1,113 +1,305 @@
-# create-modern-react
+<p align="center">
+  <img src="https://raw.githubusercontent.com/facebook/react/main/fixtures/dom/public/react-logo.svg" width="80" alt="React Logo" />
+</p>
 
-Create a modern React application with Vite, TypeScript, and your choice of modern libraries.
+<h1 align="center">create-modern-react</h1>
+
+<p align="center">
+  <strong>Production-ready React + TypeScript + Tailwind in 30 seconds</strong>
+</p>
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/create-modern-react"><img src="https://img.shields.io/npm/v/create-modern-react.svg?style=flat-square&color=00d8ff" alt="npm version" /></a>
+  <a href="https://www.npmjs.com/package/create-modern-react"><img src="https://img.shields.io/npm/dm/create-modern-react.svg?style=flat-square&color=00d8ff" alt="npm downloads" /></a>
+  <a href="https://github.com/AabhashRai13/create-modern-react/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/create-modern-react.svg?style=flat-square&color=00d8ff" alt="license" /></a>
+</p>
+
+<p align="center">
+  <code>npx create-modern-react my-app</code>
+</p>
+
+---
+
+## Why?
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                                                                         │
+│   npm create vite@latest              vs       npx create-modern-react  │
+│                                                                         │
+│   ✗ Empty src/ folder                         ✓ Complete project        │
+│   ✗ No styling solution                       ✓ Tailwind CSS ready      │
+│   ✗ No routing                                ✓ Wouter + lazy loading   │
+│   ✗ No API layer                              ✓ Axios + interceptors    │
+│   ✗ No UI components                          ✓ Shadcn/ui (5 components)│
+│   ✗ No icons                                  ✓ Lucide React            │
+│   ✗ No toast notifications                    ✓ react-hot-toast         │
+│   ✗ No error boundary                         ✓ Built-in                │
+│   ✗ Basic ESLint                              ✓ 25+ rules configured    │
+│   ✗ ~2 hours setup                            ✓ 30 seconds              │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+```
+
+**Stop configuring. Start building.**
+
+---
 
 ## Quick Start
 
 ```bash
 npx create-modern-react my-app
 cd my-app
-npm run dev
+yarn dev
 ```
 
-## Features
+That's it. Your app is running at `http://localhost:3000`
 
-🚀 **Modern Stack**: Vite + React 18 + TypeScript
-📦 **Interactive Setup**: Choose your preferred libraries
-🎨 **UI Libraries**: Ant Design, Material-UI, Chakra UI support
-🎯 **State Management**: Redux Toolkit, Zustand, Jotai options
-🛣️ **Routing**: React Router or Wouter
-🔧 **Development Tools**: ESLint, Prettier, Storybook, Testing
-🎨 **Styling**: Tailwind CSS, CSS Modules, Styled Components
-📱 **PWA Ready**: Optional Progressive Web App support
+---
 
-## Usage
+## What's Included
 
-### Basic Usage
+### Core Stack (Every Project)
 
-```bash
-npx create-modern-react my-project
+| Technology | Version | Purpose |
+|------------|---------|---------|
+| **React** | 18.3 | Latest features, concurrent rendering |
+| **TypeScript** | 5.5 | Strict mode, full type safety |
+| **Vite + SWC** | 5.4 | 20x faster than Babel |
+| **Tailwind CSS** | 3.4 | Dark mode, CSS variables |
+| **Shadcn/ui** | Latest | Button, Input, Card, Skeleton, Separator |
+| **Wouter** | 3.3 | 2KB router (vs 28KB React Router) |
+| **Axios** | 1.7 | Interceptors, cancel tokens |
+| **Lucide React** | Latest | Beautiful, consistent icons |
+
+### Build Optimizations
+
+```
+┌────────────────────┬────────────────────────────────────────┐
+│ SWC Compiler       │ 20x faster than Babel                  │
+├────────────────────┼────────────────────────────────────────┤
+│ Gzip Compression   │ Pre-compressed .gz files (1KB thresh.) │
+├────────────────────┼────────────────────────────────────────┤
+│ Chunk Splitting    │ Separate vendor + router bundles       │
+├────────────────────┼────────────────────────────────────────┤
+│ Tree Shaking       │ Dead code elimination                  │
+├────────────────────┼────────────────────────────────────────┤
+│ Console Removal    │ Auto-stripped in production            │
+├────────────────────┼────────────────────────────────────────┤
+│ SVG Components     │ Import SVGs as React components        │
+└────────────────────┴────────────────────────────────────────┘
 ```
 
-### With Options
+### Optional Features
 
-```bash
-npx create-modern-react my-project --skip-install --skip-git
+Select during project creation:
+
+```
+[ ] Redux Toolkit + Redux Persist ── State management with persistence
+[ ] Ant Design v5 ───────────────── Enterprise UI (replaces Shadcn/ui)
+[ ] Husky + lint-staged ─────────── Git hooks for code quality
 ```
 
-## Interactive Prompts
+---
 
-The CLI will guide you through selecting:
-
-- **Project Name**: Your project directory name
-- **Package Manager**: npm, yarn, or pnpm
-- **UI Library**: Ant Design, Material-UI, Chakra UI, or none
-- **CSS Framework**: Tailwind CSS, CSS Modules, Styled Components, or plain CSS
-- **State Management**: Redux Toolkit, Zustand, Jotai, or React state only
-- **Data Fetching**: React Query, SWR, Apollo Client, or Fetch API
-- **Routing**: React Router, Wouter, or none
-- **Development Tools**: Storybook, ESLint/Prettier, Husky, Testing
-- **Icons**: Lucide React, React Icons, Heroicons, or none
-- **PWA**: Progressive Web App features
-- **Git**: Initialize Git repository
-
-## Template Combinations
-
-### Minimal Setup
-
-- Vite + React + TypeScript + Tailwind CSS
-
-### Enterprise Ready
-
-- Vite + React + TypeScript + Ant Design + Redux Toolkit + React Query + React Router
-
-### Modern Stack
-
-- Vite + React + TypeScript + Tailwind + Zustand + React Query + Wouter
-
-### Full Featured
-
-- All libraries with Storybook, testing, and PWA support
-
-## CLI Options
-
-- `--skip-install`: Skip automatic dependency installation
-- `--skip-git`: Skip Git repository initialization
-- `--template <name>`: Use a specific template (future feature)
-
-## Requirements
-
-- Node.js 16.0.0 or higher
-- npm, yarn, or pnpm
-
-## Generated Project Structure
+## Generated Structure
 
 ```
 my-app/
-├── public/
 ├── src/
 │   ├── components/
+│   │   ├── ui/                 # Shadcn/ui components
+│   │   │   ├── button.tsx
+│   │   │   ├── input.tsx
+│   │   │   ├── card.tsx
+│   │   │   ├── skeleton.tsx
+│   │   │   └── separator.tsx
+│   │   └── layout/
+│   │       ├── root-layout.tsx
+│   │       └── error-boundary.tsx
 │   ├── hooks/
-│   ├── utils/
-│   ├── types/
-│   ├── styles/
-│   ├── App.tsx
-│   ├── main.tsx
-│   └── index.css
-├── package.json
-├── vite.config.ts
-├── tsconfig.json
-└── README.md
+│   │   ├── use-loader.ts       # Loading state management
+│   │   ├── use-debounce.ts     # Value debouncing
+│   │   └── use-cancel-token.ts # Axios request cancellation
+│   ├── routes/
+│   │   └── index.tsx           # Wouter + lazy loading
+│   ├── screens/
+│   │   ├── home/
+│   │   └── not-found/
+│   ├── services/
+│   │   ├── api/
+│   │   │   ├── axios-instance.ts
+│   │   │   └── api-helpers.ts  # getApi, postApi, patchApi...
+│   │   └── alertify-services.ts
+│   ├── providers/
+│   │   └── theme-provider.tsx
+│   ├── lib/
+│   │   └── utils.ts            # cn() utility
+│   └── types/
+├── vite.config.ts              # SWC + SVGR + Compression
+├── tailwind.config.js          # Dark mode + CSS variables
+├── tsconfig.json               # Strict mode + path aliases
+└── .eslintrc.cjs               # 25+ rules configured
 ```
 
-## Contributing
+---
 
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
+## Features
+
+### SVG as React Components
+
+```tsx
+import Logo from './logo.svg?react';
+
+<Logo className="h-8 w-8 text-primary" />
+```
+
+### Type-Safe API Layer
+
+```tsx
+import { getApi, postApi } from '~/services/api';
+
+const users = await getApi<User[]>('/users');
+const newUser = await postApi<User>('/users', { name: 'John' });
+```
+
+### Toast Notifications
+
+```tsx
+import { Alertify } from '~/services/alertify-services';
+
+Alertify.success('Saved successfully');
+Alertify.error('Something went wrong');
+Alertify.loading('Processing...');
+```
+
+### Custom Hooks
+
+```tsx
+// Loading state
+const [isLoading, startLoader, endLoader] = useLoader();
+
+const fetchData = async () => {
+  startLoader();
+  try {
+    await getApi('/users');
+  } finally {
+    endLoader();
+  }
+};
+
+// Debounced search
+const debouncedQuery = useDebounce(searchQuery, 300);
+
+// Cancel requests on unmount
+const { cancelToken, cancel } = useCancelToken();
+```
+
+### Path Aliases
+
+```tsx
+// ❌ Instead of this:
+import { Button } from '../../../components/ui/button';
+
+// ✅ Write this:
+import { Button } from '~/components/ui';
+```
+
+---
+
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `yarn dev` | Start dev server (port 3000) |
+| `yarn build` | Production build with gzip |
+| `yarn preview` | Preview production build |
+| `yarn lint` | Run ESLint |
+| `yarn lint:fix` | Fix ESLint issues |
+| `yarn format` | Format with Prettier |
+
+---
+
+## Build Output
+
+```
+dist/
+├── assets/
+│   ├── index-[hash].js         # Main bundle
+│   ├── index-[hash].js.gz      # Gzipped (~70% smaller)
+│   ├── vendor-[hash].js        # React + ReactDOM (cached)
+│   ├── router-[hash].js        # Wouter (cached)
+│   └── index-[hash].css.gz
+└── index.html
+```
+
+---
+
+## Comparison
+
+| Feature | Vite | CRA | **create-modern-react** |
+|---------|:----:|:---:|:-----------------------:|
+| Build Speed | Fast | Slow | **Fastest (SWC)** |
+| TypeScript | ✅ | ✅ | ✅ Strict |
+| Tailwind CSS | ❌ | ❌ | ✅ |
+| UI Components | ❌ | ❌ | ✅ |
+| Routing | ❌ | ❌ | ✅ |
+| API Layer | ❌ | ❌ | ✅ |
+| Toast System | ❌ | ❌ | ✅ |
+| Error Boundary | ❌ | ❌ | ✅ |
+| Gzip Build | ❌ | ❌ | ✅ |
+| SVG Components | ❌ | ✅ | ✅ |
+| Dark Mode | ❌ | ❌ | ✅ |
+| Path Aliases | ❌ | ❌ | ✅ |
+| **Setup Time** | ~1hr | ~2hr | **30 sec** |
+
+---
+
+## Built With This Boilerplate
+
+<p align="center">
+  <a href="https://resumefreepro.com">
+    <strong>ResumeFreePro.com</strong>
+  </a>
+  <br />
+  <em>Free AI-powered resume builder — built entirely with create-modern-react</em>
+</p>
+
+> Want to showcase your project? [Open an issue](https://github.com/AabhashRai13/create-modern-react/issues) to get featured!
+
+---
+
+## CLI Options
+
+```bash
+npx create-modern-react my-app              # Interactive mode
+npx create-modern-react my-app --skip-install  # Skip npm install
+npx create-modern-react my-app --skip-git      # Skip git init
+```
+
+---
+
+## Requirements
+
+- Node.js **18+**
+- npm, yarn, or pnpm
+
+---
 
 ## License
 
-MIT © [Your Name]
+MIT © [Aabhash Rai](https://github.com/AabhashRai13)
+
+---
+
+<p align="center">
+  <strong>From <code>npx</code> to production-ready in 30 seconds.</strong>
+</p>
+
+<p align="center">
+  <a href="https://github.com/AabhashRai13/create-modern-react">⭐ Star on GitHub</a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/AabhashRai13/create-modern-react/issues">Report Bug</a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/AabhashRai13/create-modern-react/issues">Request Feature</a>
+</p>
