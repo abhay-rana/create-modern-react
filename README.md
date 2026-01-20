@@ -18,6 +18,12 @@
   <code>npx create-modern-react my-app</code>
 </p>
 
+<p align="center">
+  <a href="https://www.npmjs.com/package/create-modern-react">
+    <img src="https://img.shields.io/badge/View%20on-npm-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="View on npm" />
+  </a>
+</p>
+
 ---
 
 ## Why?
