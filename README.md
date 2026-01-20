@@ -42,7 +42,8 @@
 │   ✗ No toast notifications                    ✓ react-hot-toast         │
 │   ✗ No error boundary                         ✓ Built-in                │
 │   ✗ Basic ESLint                              ✓ 25+ rules configured    │
-│   ✗ ~2 hours setup                            ✓ 30 seconds              │
+│   ✗ No state management                       ✓ Redux (optional)        │
+│   ✗ ~2 hours setup                            ✓ 15 seconds              │
 │                                                                         │
 └─────────────────────────────────────────────────────────────────────────┘
 ```
@@ -78,6 +79,16 @@ That's it. Your app is running at `http://localhost:3000`
 | **Axios** | 1.7 | Interceptors, cancel tokens |
 | **Lucide React** | Latest | Beautiful, consistent icons |
 
+### Optional Features
+
+Select during project creation:
+
+```
+[ ] Redux Toolkit + Redux Persist ── State management with persistence
+[ ] Ant Design v5 ───────────────── Enterprise UI (replaces Shadcn/ui)
+[ ] Husky + lint-staged ─────────── Git hooks for code quality
+```
+
 ### Build Optimizations
 
 ```
@@ -94,16 +105,6 @@ That's it. Your app is running at `http://localhost:3000`
 ├────────────────────┼────────────────────────────────────────┤
 │ SVG Components     │ Import SVGs as React components        │
 └────────────────────┴────────────────────────────────────────┘
-```
-
-### Optional Features
-
-Select during project creation:
-
-```
-[ ] Redux Toolkit + Redux Persist ── State management with persistence
-[ ] Ant Design v5 ───────────────── Enterprise UI (replaces Shadcn/ui)
-[ ] Husky + lint-staged ─────────── Git hooks for code quality
 ```
 
 ---
