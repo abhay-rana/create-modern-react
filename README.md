@@ -11,7 +11,7 @@
 <p align="center">
   <a href="https://www.npmjs.com/package/create-modern-react"><img src="https://img.shields.io/npm/v/create-modern-react.svg?style=flat-square&color=00d8ff" alt="npm version" /></a>
   <a href="https://www.npmjs.com/package/create-modern-react"><img src="https://img.shields.io/npm/dm/create-modern-react.svg?style=flat-square&color=00d8ff" alt="npm downloads" /></a>
-  <a href="https://github.com/AabhashRai13/create-modern-react/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/create-modern-react.svg?style=flat-square&color=00d8ff" alt="license" /></a>
+  <a href="https://github.com/abhay-rana/create-modern-react/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/create-modern-react.svg?style=flat-square&color=00d8ff" alt="license" /></a>
 </p>
 
 <p align="center">
@@ -271,7 +271,7 @@ dist/
   <em>Free AI-powered resume builder — built entirely with create-modern-react</em>
 </p>
 
-> Want to showcase your project? [Open an issue](https://github.com/AabhashRai13/create-modern-react/issues) to get featured!
+> Want to showcase your project? [Open an issue](https://github.com/abhay-rana/create-modern-react/issues) to get featured!
 
 ---
 
@@ -294,7 +294,7 @@ npx create-modern-react my-app --skip-git      # Skip git init
 
 ## License
 
-MIT © [Aabhash Rai](https://github.com/AabhashRai13)
+MIT © [Abhay Rana](https://github.com/abhay-rana)
 
 ---
 
@@ -303,9 +303,9 @@ MIT © [Aabhash Rai](https://github.com/AabhashRai13)
 </p>
 
 <p align="center">
-  <a href="https://github.com/AabhashRai13/create-modern-react">⭐ Star on GitHub</a>
+  <a href="https://github.com/abhay-rana/create-modern-react">⭐ Star on GitHub</a>
   &nbsp;·&nbsp;
-  <a href="https://github.com/AabhashRai13/create-modern-react/issues">Report Bug</a>
+  <a href="https://github.com/abhay-rana/create-modern-react/issues">Report Bug</a>
   &nbsp;·&nbsp;
-  <a href="https://github.com/AabhashRai13/create-modern-react/issues">Request Feature</a>
+  <a href="https://github.com/abhay-rana/create-modern-react/issues">Request Feature</a>
 </p>
