@@ -22,51 +22,9 @@
   <a href="https://www.npmjs.com/package/create-modern-react">
     <img src="https://img.shields.io/badge/View%20on-npm-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="View on npm" />
   </a>
-</p>
-
-<p align="center">
   <a href="https://stackblitz.com/github/abhay-rana/react-vite-tailwind-shadcn-starter?file=README.md">
     <img src="https://developer.stackblitz.com/img/open_in_stackblitz.svg" alt="Open in StackBlitz" />
   </a>
-</p>
-
----
-
-## 🚀 Try Before Install
-
-**Experience it live without downloading anything:**
-
-<p align="center">
-  <a href="https://stackblitz.com/github/abhay-rana/react-vite-tailwind-shadcn-starter?file=README.md">
-    <img src="https://img.shields.io/badge/Open_in-StackBlitz-1269D3?style=for-the-badge&logo=stackblitz&logoColor=white" alt="Open in StackBlitz" />
-  </a>
-</p>
-
-<p align="center">
-  <strong>👆 Click above to see the full project running in your browser</strong>
-  <br />
-  <em>No installation required • Full IDE in browser • See all features in action</em>
-</p>
-
----
-
-## 🎯 Live Demo
-
-<p align="center">
-  <a href="https://resumefreepro.com?utm_source=github&utm_medium=readme&utm_campaign=create-modern-react-demo">
-    <img src="https://img.shields.io/badge/🚀_Live_Demo-ResumeFreePro.com-00d8ff?style=for-the-badge" alt="Live Demo" />
-  </a>
-</p>
-
-<p align="center">
-  <strong>See what you can build in production</strong>
-  <br />
-  <em>
-    <a href="https://resumefreepro.com?utm_source=github&utm_medium=readme&utm_campaign=create-modern-react-demo">ResumeFreePro.com</a>
-    — A full-featured AI-powered resume builder
-  </em>
-  <br />
-  <small>Built entirely with create-modern-react • 100% TypeScript • Production-ready</small>
 </p>
 
 ---
@@ -106,6 +64,24 @@ yarn dev
 ```
 
 That's it. Your app is running at `http://localhost:3000`
+
+---
+
+## 🚀 Try Before Install
+
+**Experience it live without downloading anything:**
+
+<p align="center">
+  <a href="https://stackblitz.com/github/abhay-rana/react-vite-tailwind-shadcn-starter?file=README.md">
+    <img src="https://img.shields.io/badge/Open_in-StackBlitz-1269D3?style=for-the-badge&logo=stackblitz&logoColor=white" alt="Open in StackBlitz" />
+  </a>
+</p>
+
+<p align="center">
+  <strong>👆 Click above to see the full project running in your browser</strong>
+  <br />
+  <em>No installation required • Full IDE in browser • See all features in action</em>
+</p>
 
 ---
 
