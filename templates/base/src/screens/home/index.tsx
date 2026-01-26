@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Moon, Sun, Github, Zap } from 'lucide-react';
+import { Moon, Sun, Github, Zap, Bot } from 'lucide-react';
 import { Button, Card, CardContent, CardHeader, CardTitle } from '~/components/ui';
 import { useTheme } from '~/providers';
 
@@ -25,7 +25,7 @@ export default function Home() {
             create-modern-react
           </h1>
           <p className="mt-2 text-muted-foreground">
-            Production-ready React + TypeScript + Tailwind in seconds
+            AI-first React + TypeScript + Tailwind in seconds
           </p>
         </div>
 
@@ -92,6 +92,19 @@ export default function Home() {
             title="Shadcn/ui"
             description="Beautiful, accessible components"
           />
+        </div>
+
+        {/* AI Skills Highlight */}
+        <div className="rounded-lg border bg-gradient-to-r from-primary/5 to-primary/10 p-4">
+          <div className="flex items-start gap-3">
+            <Bot className="h-5 w-5 text-primary mt-0.5" />
+            <div>
+              <h3 className="font-semibold">Claude Code AI Skills</h3>
+              <p className="mt-1 text-sm text-muted-foreground">
+                8 pre-configured skills for React best practices, UI/UX design, browser testing, and spec refinement
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Footer */}

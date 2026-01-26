@@ -134,6 +134,8 @@ Select during project creation:
 
 ```
 my-app/
+├── .claude/
+│   └── skills/               # 8 AI skills included (extensible)
 ├── src/
 │   ├── components/
 │   │   ├── ui/                 # Shadcn/ui components
@@ -169,6 +171,23 @@ my-app/
 ├── tsconfig.json               # Strict mode + path aliases
 └── .eslintrc.cjs               # 25+ rules configured
 ```
+
+### 🤖 AI-First Development
+
+8 pre-configured [Claude Code](https://claude.ai/code) skills ship with every project:
+
+| Skill | Purpose |
+|-------|---------|
+| `react-best-practices` | Performance patterns from Vercel Engineering |
+| `frontend-design` | Production-grade UI avoiding generic aesthetics |
+| `design-principles` | Minimal design system (Linear/Notion/Stripe style) |
+| `ui-ux-pro-max` | 67 styles, 96 palettes, 56 font pairings |
+| `question-me` | Socratic spec refinement |
+| `learn-together` | Collaborative tech exploration |
+| `agent-browser` | Browser automation & testing |
+| `autoskill` | Session learning for AI patterns |
+
+Skills activate automatically with Claude Code. Add your own to `.claude/skills/`.
 
 ---
 
@@ -283,15 +302,10 @@ dist/
 
 ---
 
-## Built With This Boilerplate
+## Projects Created Using This Boilerplate
 
-<p align="center">
-  <a href="https://resumefreepro.com?utm_source=github&utm_medium=readme&utm_campaign=create-modern-react">
-    <strong>ResumeFreePro.com</strong>
-  </a>
-  <br />
-  <em>Free AI-powered resume builder — built entirely with create-modern-react</em>
-</p>
+1. **[ResumeFreePro.com](https://resumefreepro.com?utm_source=github&utm_medium=readme&utm_campaign=create-modern-react)** - Free AI-powered resume builder
+2. **[HealthMug.com](https://healthmug.com?utm_source=github&utm_medium=readme&utm_campaign=create-modern-react)** - Online pharmacy platform
 
 > Want to showcase your project? [Open an issue](https://github.com/abhay-rana/create-modern-react/issues) to get featured!
 
