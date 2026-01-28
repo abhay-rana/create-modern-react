@@ -45,6 +45,7 @@
 │   ✗ No toast notifications                    ✓ react-hot-toast         │
 │   ✗ No error boundary                         ✓ Built-in                │
 │   ✗ Basic ESLint                              ✓ 25+ rules configured    │
+│   ✗ No form validation                        ✓ RHF + Zod (optional)    │
 │   ✗ No state management                       ✓ Redux (optional)        │
 │   ✗ ~2 hours setup                            ✓ 15 seconds              │
 │                                                                         │
@@ -106,6 +107,7 @@ Select during project creation:
 
 ```
 [ ] Redux Toolkit + Redux Persist ── State management with persistence
+[ ] React Hook Form + Zod ────────── Type-safe form validation
 [ ] Ant Design v5 ───────────────── Enterprise UI (replaces Shadcn/ui)
 [ ] Husky + lint-staged ─────────── Git hooks for code quality
 ```
@@ -147,6 +149,10 @@ my-app/
 │   │   └── layout/
 │   │       ├── root-layout.tsx
 │   │       └── error-boundary.tsx
+│   ├── forms/                    # (optional) React Hook Form + Zod
+│   │   ├── index.ts              # Barrel export
+│   │   ├── use-zod-form.ts       # Custom hook with onBlur validation
+│   │   └── types.ts              # Form TypeScript types
 │   ├── hooks/
 │   │   ├── use-loader.ts       # Loading state management
 │   │   ├── use-debounce.ts     # Value debouncing
@@ -241,6 +247,31 @@ const debouncedQuery = useDebounce(searchQuery, 300);
 // Cancel requests on unmount
 const { cancelToken, cancel } = useCancelToken();
 ```
+
+### Type-Safe Form Validation (Optional)
+
+```tsx
+import { z } from 'zod';
+import { useZodForm } from '~/forms';
+
+const loginSchema = z.object({
+  email: z.string().email(),
+  password: z.string().min(8, 'Password must be 8+ characters'),
+});
+
+function LoginForm() {
+  const form = useZodForm({ schema: loginSchema });
+
+  return (
+    <form onSubmit={form.handleSubmit(onSubmit)}>
+      <input {...form.register('email')} />
+      {form.formState.errors.email?.message}
+    </form>
+  );
+}
+```
+
+*UI-agnostic • Works with Shadcn, Antd, or plain HTML • Validates onBlur*
 
 ### Path Aliases
 

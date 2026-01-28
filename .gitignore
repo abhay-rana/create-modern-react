@@ -159,3 +159,6 @@ ehthumbs_vista.db
 *.njsproj
 *.sln
 *.sw?
+
+# Test folders
+test-*/
