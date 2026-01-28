@@ -80,38 +80,6 @@ export const Alertify = {
   },
 
   /**
-   * Show a custom toast with action button
-   */
-  withAction(
-    message: string,
-    actionText: string,
-    onAction: () => void,
-    position: ToastPosition = 'bottom-right'
-  ) {
-    if (currentToastId) {
-      toast.dismiss(currentToastId);
-    }
-    currentToastId = toast(
-      (t) => (
-        <div className="flex items-center gap-2">
-          <span>{message}</span>
-          <button
-            onClick={() => {
-              onAction();
-              toast.dismiss(t.id);
-            }}
-            className="rounded bg-primary px-2 py-1 text-xs font-medium text-primary-foreground hover:bg-primary/90"
-          >
-            {actionText}
-          </button>
-        </div>
-      ),
-      { position, duration: 5000 }
-    );
-    return currentToastId;
-  },
-
-  /**
    * Dismiss all toasts
    */
   dismissAll() {

@@ -1,37 +1,59 @@
 module.exports = {
   root: true,
-  env: { browser: true, es2020: true },
+  env: {
+    browser: true,
+    node: true,
+    es6: true,
+  },
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:react-hooks/recommended',
+    'eslint-config-prettier',
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  ignorePatterns: ['dist', '.eslintrc.cjs', 'node_modules'],
   parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh', 'unused-imports'],
+  plugins: ['@typescript-eslint', 'import'],
   rules: {
-    'react-refresh/only-export-components': [
-      'warn',
-      { allowConstantExport: true },
-    ],
-    // Unused imports
-    'unused-imports/no-unused-imports': 'error',
-    'unused-imports/no-unused-vars': [
-      'warn',
-      {
-        vars: 'all',
-        varsIgnorePattern: '^_',
-        args: 'after-used',
-        argsIgnorePattern: '^_',
-      },
-    ],
     // TypeScript
-    '@typescript-eslint/no-unused-vars': 'off', // Handled by unused-imports
-    '@typescript-eslint/no-explicit-any': 'warn',
-    '@typescript-eslint/prefer-as-const': 'error',
-    // General
-    'no-console': ['warn', { allow: ['warn', 'error'] }],
-    'prefer-const': 'error',
-    'no-var': 'error',
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': ['warn'],
+
+    // Import validation
+    'import/no-unresolved': 'error',
+    'import/named': 'error',
+
+    // Core JavaScript
+    'no-undef': ['error'],
+    'no-var': ['error'],
+    'no-await-in-loop': 'error',
+    'no-constant-binary-expression': 'error',
+    'no-duplicate-imports': 'error',
+    'no-new-native-nonconstructor': 'error',
+    'no-promise-executor-return': 'error',
+    'no-self-compare': 'error',
+    'no-template-curly-in-string': 'error',
+    'no-unmodified-loop-condition': 'error',
+    'no-unreachable-loop': 'error',
+    'no-unused-private-class-members': 'error',
+    'no-use-before-define': 'error',
+
+    // React
+    'react/prop-types': 'off',
+    'react/react-in-jsx-scope': 'off',
+
+    // Disabled
+    'no-extra-boolean-cast': 'off',
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+    'import/resolver': {
+      typescript: {},
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        moduleDirectory: ['node_modules', 'src/'],
+      },
+    },
   },
 };

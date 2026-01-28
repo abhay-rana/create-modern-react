@@ -10,7 +10,10 @@
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "moduleDetection": "force",
-    "noEmit": true,
+    "emitDeclarationOnly": true,
+
+    /* Composite project (required for project references) */
+    "composite": true,
 
     /* Linting */
     "strict": true,
