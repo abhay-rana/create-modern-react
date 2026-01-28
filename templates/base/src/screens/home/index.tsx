@@ -135,7 +135,7 @@ export default function Home() {
               description="AI-Powered Resume Builder"
               designStyle="Modern + Glassmorphism"
               url="https://resumefreepro.com?utm_source=starter-template&utm_medium=landing-page&utm_campaign=create-modern-react-demo"
-              previewUrl="/screenshots/resumefreepro.png"
+              previewUrl="https://storage.resumefreepro.com/media-files/resumefreepro.webp"
             />
             <ProjectCard
               category="E-Pharmacy"
@@ -143,7 +143,7 @@ export default function Home() {
               description="Online Pharmacy Platform"
               designStyle="Clean + Professional"
               url="https://healthmug.com?utm_source=starter-template&utm_medium=landing-page&utm_campaign=create-modern-react-demo"
-              previewUrl="/screenshots/healthmug.png"
+              previewUrl="https://storage.resumefreepro.com/media-files/healthmug.webp"
             />
           </div>
         </div>
