@@ -1,6 +1,6 @@
 {
   "name": "create-modern-react",
-  "version": "2.3.4",
+  "version": "2.3.5",
   "description": "Create production-ready React + TypeScript + Tailwind applications in seconds",
   "main": "bin/index.js",
   "bin": {
