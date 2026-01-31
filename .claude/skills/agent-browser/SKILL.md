@@ -6,6 +6,15 @@ allowed-tools: Bash(agent-browser:*)
 
 # Browser Automation with agent-browser
 
+## CRITICAL: Tool Selection
+
+**ALWAYS use the `agent-browser` CLI via Bash tool** — NOT the `mcp__claude-in-chrome__*` MCP tools.
+
+- ✅ Correct: `agent-browser open <url>`, `agent-browser snapshot -i`, `agent-browser click @e1`
+- ❌ Wrong: `mcp__claude-in-chrome__navigate`, `mcp__claude-in-chrome__read_page`, `mcp__claude-in-chrome__computer`
+
+The `agent-browser` CLI is a separate tool that runs via Bash. When this skill is invoked, execute all browser automation through `agent-browser` commands, not MCP browser tools.
+
 ## Quick start
 
 ```bash
