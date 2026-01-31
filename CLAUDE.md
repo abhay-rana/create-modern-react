@@ -157,6 +157,87 @@ src/
 - Directory existence checking with overwrite confirmation
 - Graceful error reporting with colored output
 
+## Antd vs Shadcn/ui Component Replacement
+
+The base template uses **Shadcn/ui** components (`~/components/ui`). When the user selects **Ant Design**, this folder is deleted and replaced with antd configuration. This creates a dependency issue for any file that imports from `~/components/ui`.
+
+### Architecture
+
+```
+templates/optional/
+├── antd/                      # Core antd config → copied to src/antd/
+│   ├── config-provider.tsx    # Theme provider wrapper
+│   ├── theme.ts               # Light/dark theme tokens
+│   ├── index.ts               # Exports
+│   └── styles/                # CSS overrides
+│
+└── antd-replacements/         # Files that replace shadcn imports
+    ├── components/layout/
+    │   └── error-boundary.tsx # Button from 'antd'
+    ├── routes/
+    │   └── index.tsx          # Skeleton from 'antd'
+    ├── screens/
+    │   ├── home/index.tsx     # Button, Card from 'antd'
+    │   └── not-found/index.tsx# Button from 'antd'
+    └── redux/
+        └── provider.tsx       # Skeleton from 'antd'
+```
+
+### Files That Import from ~/components/ui
+
+When adding new screens or components, check if they use shadcn components:
+
+| File | Shadcn Imports | Antd Equivalent |
+|------|----------------|-----------------|
+| `error-boundary.tsx` | `Button` | `Button` from 'antd' |
+| `routes/index.tsx` | `Skeleton` | `Skeleton.Avatar`, `Skeleton.Input` |
+| `screens/home/index.tsx` | `Button`, `Card`, `CardHeader`, etc. | `Button`, `Card` with `title` prop |
+| `screens/not-found/index.tsx` | `Button` with `asChild` | `Button` with `href` prop |
+| `redux/provider.tsx` | `Skeleton` | `Skeleton.Avatar`, `Skeleton.Input` |
+
+### Key API Differences
+
+```tsx
+// Shadcn Button
+<Button variant="outline" size="icon" asChild>
+  <Link href="/">Go home</Link>
+</Button>
+
+// Antd Button
+<Button type="default" shape="circle" href="/">
+  Go home
+</Button>
+```
+
+```tsx
+// Shadcn Skeleton
+<Skeleton className="h-12 w-12 rounded-full" />
+
+// Antd Skeleton
+<Skeleton.Avatar active size={48} shape="circle" />
+```
+
+### Adding New Components/Screens
+
+When creating new files that use UI components:
+
+1. **Create the base version** in `templates/base/` using Shadcn imports
+2. **Create antd version** in `templates/optional/antd-replacements/` with same path structure
+3. **Update `lib/setup.js`** to include the file in `replaceComponentsForAntd()` or `replaceReduxProviderForAntd()`
+
+### Setup.js Flow
+
+```
+1. Copy base template (includes ~/components/ui)
+2. If antd selected:
+   a. Delete src/components/ui folder
+   b. Copy antd/ → src/antd/
+   c. Run replaceComponentsForAntd() → overwrites base files
+3. If redux selected:
+   a. Copy redux/ → src/redux/
+   b. If antd: Run replaceReduxProviderForAntd() → overwrites provider.tsx
+```
+
 ## Template Combinations
 
 The CLI supports these pre-defined stacks:
