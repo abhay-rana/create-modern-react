@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
+import tailwindcss from '@tailwindcss/vite';
 import svgr from 'vite-plugin-svgr';
 import compression from 'vite-plugin-compression';
 import path from 'path';
@@ -8,6 +9,7 @@ import path from 'path';
 export default defineConfig({
   plugins: [
     react(),
+    tailwindcss(),
     // Import SVGs as React components
     // Usage: import { ReactComponent as Logo } from './logo.svg'
     // Or: import Logo from './logo.svg?react'

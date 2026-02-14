@@ -1,13 +1,13 @@
 {
   "name": "create-modern-react",
-  "version": "2.3.8",
+  "version": "3.0.0",
   "description": "Create production-ready React + TypeScript + Tailwind applications in seconds",
   "main": "bin/index.js",
   "bin": {
     "create-modern-react": "./bin/index.js"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   },
   "keywords": [
     "react",

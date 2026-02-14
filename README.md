@@ -5,7 +5,7 @@
 <h1 align="center">create-modern-react</h1>
 
 <p align="center">
-  <strong>Production-ready React + TypeScript + Tailwind in 30 seconds</strong>
+  <strong>Production-ready React + TypeScript + Tailwind in 15 seconds</strong>
 </p>
 
 <p align="center">
@@ -92,13 +92,14 @@ That's it. Your app is running at `http://localhost:3000`
 
 | Technology | Version | Purpose |
 |------------|---------|---------|
-| **React** | 18.3 | Latest features, concurrent rendering |
-| **TypeScript** | 5.5 | Strict mode, full type safety |
-| **Vite + SWC** | 5.4 | 20x faster than Babel |
-| **Tailwind CSS** | 3.4 | Dark mode, CSS variables |
+| **React** | 19 | Actions, use() hook, server functions |
+| **TypeScript** | 5.9 | Strict mode, full type safety |
+| **Vite + SWC** | 7 | 20x faster than Babel |
+| **Tailwind CSS** | 4 | CSS-first config, `@theme` tokens |
+| **ESLint** | 9 | Flat config, `typescript-eslint` |
 | **Shadcn/ui** | Latest | Button, Input, Card, Skeleton, Separator |
-| **Wouter** | 3.3 | 2KB router (vs 28KB React Router) |
-| **Axios** | 1.7 | Interceptors, cancel tokens |
+| **Wouter** | 3.5 | 2KB router (vs 28KB React Router) |
+| **Axios** | 1.8 | Interceptors, cancel tokens |
 | **Lucide React** | Latest | Beautiful, consistent icons |
 
 ### Optional Features
@@ -172,10 +173,9 @@ my-app/
 │   ├── lib/
 │   │   └── utils.ts            # cn() utility
 │   └── types/
-├── vite.config.ts              # SWC + SVGR + Compression
-├── tailwind.config.js          # Dark mode + CSS variables
-├── tsconfig.json               # Strict mode + path aliases
-└── .eslintrc.cjs               # 25+ rules configured
+├── vite.config.ts              # SWC + SVGR + Tailwind + Compression
+├── tsconfig.json               # Strict mode + path aliases (ES2022)
+└── eslint.config.js            # ESLint 9 flat config, 25+ rules
 ```
 
 ### 🤖 AI-First Development
@@ -329,7 +329,7 @@ dist/
 | SVG Components | ❌ | ✅ | ✅ |
 | Dark Mode | ❌ | ❌ | ✅ |
 | Path Aliases | ❌ | ❌ | ✅ |
-| **Setup Time** | ~1hr | ~2hr | **30 sec** |
+| **Setup Time** | ~1hr | ~2hr | **15 sec** |
 
 ---
 
@@ -354,7 +354,7 @@ npx create-modern-react my-app --skip-git      # Skip git init
 
 ## Requirements
 
-- Node.js **18+**
+- Node.js **20+**
 - npm, yarn, or pnpm
 
 ---
@@ -366,7 +366,7 @@ MIT © [Abhay Rana](https://github.com/abhay-rana)
 ---
 
 <p align="center">
-  <strong>From <code>npx</code> to production-ready in 30 seconds.</strong>
+  <strong>From <code>npx</code> to production-ready in 15 seconds.</strong>
 </p>
 
 <p align="center">
